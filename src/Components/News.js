@@ -71,19 +71,22 @@ export class News extends Component {
   render() {
     return (
       <div className='container my-3'> 
-      <h2>NewsZap - Top Headlines</h2>
-      <div className="row">
-            <div className="col-md-4">
-                <NewsItem title = "myTitle" description = "myDescription" 
-                imageUrl="https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/94E8/production/_133302183_arsenal4.png" newsUrl = "Todo"/>
+        <h2>NewsZap - Top Headlines</h2>
+        <div className="row">
+        {this.state.articles.map((element)=>{
+            return <div className="col-md-4" key ={element.url}>
+                {/*.slice(0, 88) -- here we are taking 88 characters at max, similarly for titles also before that we are checking for null title/decs too*/}
+                {/* <NewsItem  title = {element.title} 
+                description = {element.description} 
+                imageUrl={element.urlToImage} url = {element.url}/> */}                
+                <NewsItem
+                  title={(element.title && element.title.length >= 45) ? element.title.slice(0, 45) + "..." : element.title}
+                  description={(element.description && element.description.length >= 60) ? element.description.slice(0, 60) + "..." : element.description}
+                  imageUrl={element.urlToImage}
+                  url={element.url}/>
             </div>
-            <div className="col-md-4">
-                <NewsItem title = "myTitle" description = "myDescription"/>
-            </div>
-            <div className="col-md-4">
-                <NewsItem title = "myTitle" description = "myDescription"/>
-            </div>
-      </div>
+        })}
+        </div>
       </div>
     )
   }
