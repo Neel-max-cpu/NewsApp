@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
+import './Navbar.css';
 // import PropTypes from 'prop-types'
 
 export class Navbar extends Component {
-//   static propTypes = {
-
-//   }
-
+  
   render() {
+    const { mode, toggleMode } = this.props;
     return (
       <div>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <nav className={`navbar navbar-expand-lg ${mode === 'light' ? 'bg-light' : 'bg-dark'} ${mode === 'light' ? 'navbar-light' : 'navbar-dark'}`}>
+            {/* <nav className={`navbar navbar-expand-lg navbar-${mode}`}> */}
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">NewsZap</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +24,12 @@ export class Navbar extends Component {
                             <a className="nav-link active" href="/">About</a>
                             </li>
                         </ul>
+                        <div className={`form-check form-switch text-${mode === 'light' ? 'dark' : 'light'}`}>
+                          <input className="form-check-input" type="checkbox" role="switch" onClick={toggleMode} id="flexSwitchCheckDefault"/>
+                          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+                            {mode === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode'}
+                          </label>
+                        </div>
                     </div>
                 </div>
             </nav>

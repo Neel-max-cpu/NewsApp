@@ -1,0 +1,10 @@
+/* Navbar.css */
+.navbar-custom-light {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    color: white;
+  }
+  
+  .navbar-custom-light .nav-link {
+    color: white !important;
+  }
+  
