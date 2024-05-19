@@ -1,7 +1,56 @@
-.box-dark{
+/* .box-dark{
     box-shadow: 0 0 1rem white;
 }
 
 .box-light{
     box-shadow: 0 0 1rem black;
 }
+
+.card {
+    overflow: hidden; 
+    transform: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+}
+  
+.card-img-top:hover {
+    transform: scale(1.1);
+} */
+
+.card {
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 100;
+}
+  
+.card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.card-light:hover {
+    box-shadow: 0 0 8rem black; 
+    /* box-shadow: 0px 0px 33px 10px black;  */
+}
+
+.card-dark:hover {
+    /* box-shadow: 0px 0px 50px white;  */
+    box-shadow: 0 0 8rem white; 
+}
+
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+
+

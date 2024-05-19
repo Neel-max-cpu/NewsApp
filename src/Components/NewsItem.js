@@ -10,9 +10,9 @@ export class NewsItem extends Component {
   
     return (
       <div className="my-3">
-        {/* <div className={`card my-3 ${mode === 'light' ? 'bg-light text-dark' : 'bg-dark text-white'} ${mode === 'light' ? 'box-light' : 'box-dark'}`} style={{width: "18rem"}}> */}
-        <div className={`card my-3 ${mode === 'light' ? 'bg-light text-dark' : 'bg-dark text-white'} ${mode === 'light' ? 'box-light' : 'box-dark'}`}>
-            <img src={imageUrl?imageUrl : defaultImageUrl} className="card-img-top" alt="..."/>
+        {/* <div className={`card my-3 ${mode === 'light' ? 'bg-light text-dark' : 'bg-dark text-white'} ${mode === 'light' ? 'box-light' : 'box-dark'}`}> */}
+        <div className={`card my-3 ${mode === 'light' ? 'bg-light text-dark card-light' : 'bg-dark text-white card-dark'}`}>
+            <img className="card-img-top" src={imageUrl?imageUrl : defaultImageUrl} alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
