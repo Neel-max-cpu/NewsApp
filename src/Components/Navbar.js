@@ -8,7 +8,7 @@ export class Navbar extends Component {
     const { mode, toggleMode } = this.props;
     return (
       <div>
-            <nav className={`navbar navbar-expand-lg ${mode === 'light' ? 'bg-light' : 'bg-dark'} ${mode === 'light' ? 'navbar-light' : 'navbar-dark'}`}>
+            <nav className={`navbar navbar-expand-lg ${mode === 'light' ? 'navbar-light' : 'navbar-dark'}`}>
             {/* <nav className={`navbar navbar-expand-lg navbar-${mode}`}> */}
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">NewsZap</a>

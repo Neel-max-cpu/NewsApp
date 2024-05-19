@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
+import './News.css';
 
 export class News extends Component {
   // articles array -----
@@ -120,9 +121,11 @@ export class News extends Component {
   }
 
   render() {
+    const {mode, toggleMode} = this.props
     return (
-      <div className='container my-3'> 
-        <h1 className="text-center">NewsZap - Top Headlines</h1>
+      // light mode dark mode here
+      <div className={`container my-3 ${mode === 'light' ? 'custom-light' : 'custom-dark'}`}> 
+        <h1 className={`text-center ${mode==='light'?'':'custom-text'}`}>NewsZap - Top Headlines</h1>
         {/* if loading is true then show the spinner */}
         {this.state.loading && <Spinner/>}
         <div className="row">
