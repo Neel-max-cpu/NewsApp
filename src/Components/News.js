@@ -2,8 +2,24 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import './News.css';
+import PropTypes from 'prop-types'
+
 
 export class News extends Component {
+
+  static defaultProps ={
+    country: 'in',
+    pageSize: 8,
+    category: 'general',
+  }
+  
+  static propTypes ={
+    country: PropTypes.string,
+    pageSize: PropTypes.number,
+    category: PropTypes.string,
+  }
+
+
   // articles array -----
   // articles = [
   //   {
@@ -72,7 +88,7 @@ export class News extends Component {
   }
 
   async componentDidMount(){
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=21159e9c23394e4cb926042ccfb51949&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=21159e9c23394e4cb926042ccfb51949&page=1&pageSize=${this.props.pageSize}`;
     this.setState({loading:true});
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -86,7 +102,7 @@ export class News extends Component {
 
 
   handlePrevClick = async ()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=21159e9c23394e4cb926042ccfb51949&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=21159e9c23394e4cb926042ccfb51949&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     this.setState({loading:true});
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -106,7 +122,7 @@ export class News extends Component {
     // if(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)){
     // }
     // else{
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=21159e9c23394e4cb926042ccfb51949&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=21159e9c23394e4cb926042ccfb51949&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
       this.setState({loading:true});
       let data = await fetch(url);
       let parsedData = await data.json();
@@ -121,22 +137,23 @@ export class News extends Component {
   }
 
   render() {
-    const {mode, toggleMode} = this.props
+    const {mode} = this.props
     return (
       // light mode dark mode here
       <div className={`container my-3 ${mode === 'light' ? 'custom-light' : 'custom-dark'}`}> 
-        <h1 className={`text-center ${mode==='light'?'':'custom-text'}`}>NewsZap - Top Headlines</h1>
+        <h1 className={`text-center newMargin ${mode==='light'?'':'custom-text'}`}>NewsZap - Top Headlines</h1>
         {/* if loading is true then show the spinner */}
         {this.state.loading && <Spinner/>}
         <div className="row">
           {/* if loading is false show this else don't show  */}
         {!this.state.loading && this.state.articles.map((element)=>{
-            return <div className="col-md-4" key ={element.url}>
+            return <div className={`col-md-4`} key ={element.url}>
                 {/*.slice(0, 88) -- here we are taking 88 characters at max, similarly for titles also before that we are checking for null title/decs too*/}
                 {/* <NewsItem  title = {element.title} 
                 description = {element.description} 
                 imageUrl={element.urlToImage} url = {element.url}/> */}                
                 <NewsItem
+                  mode = {mode}
                   title={(element.title && element.title.length >= 45) ? element.title.slice(0, 45) + "..." : element.title}
                   description={(element.description && element.description.length >= 60) ? element.description.slice(0, 60) + "..." : element.description}
                   imageUrl={element.urlToImage}
@@ -145,8 +162,8 @@ export class News extends Component {
         })}
         </div>
         <div className="container d-flex justify-content-between">
-          <button disabled={this.state.page<=1} type="button" className="btn btn-dark" onClick={this.handlePrevClick}>&larr; Previous</button>
-          <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)} type="button" className="btn btn-dark mx-3" onClick={this.handleNextClick}>Next &rarr;</button>
+          <button disabled={this.state.page<=1} type="button" className={`btn ${mode==='light'?'btn-dark':'btn-warning'}`} onClick={this.handlePrevClick}>&larr; Previous</button>
+          <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)} type="button" className={`btn ${mode==='light'?'btn-dark':'btn-warning'} mx-3`} onClick={this.handleNextClick}>Next &rarr;</button>
         </div>
       </div>
     )
