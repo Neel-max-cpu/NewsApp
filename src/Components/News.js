@@ -76,15 +76,19 @@ export class News extends Component {
   //   }
   // ]
 
+  capitalizedFirstLetter = (string) =>{
+    return string.charAt(0).toUpperCase()+string.slice(1);
+  }
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       // articles: this.articles, 
       articles: [], 
       loading: false,
       page: 1
     }
+    document.title = `${this.capitalizedFirstLetter(this.props.category)} - NewsZap`;
   }
 
 
@@ -164,7 +168,7 @@ export class News extends Component {
     return (
       // light mode dark mode here
       <div className={`container my-3 ${mode === 'light' ? 'custom-light' : 'custom-dark'}`}> 
-        <h1 className={`text-center newMargin ${mode==='light'?'':'custom-text'}`}>NewsZap - Top Headlines</h1>
+        <h1 className={`text-center newMargin ${mode==='light'?'':'custom-text'}`}>NewsZap - Top {this.capitalizedFirstLetter(this.props.category)} Headlines</h1>
         {/* if loading is true then show the spinner */}
         {this.state.loading && <Spinner/>}
         <div className="row">

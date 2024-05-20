@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './About.css';
 
 class About extends Component {
+
+
+  capitalizedFirstLetter = (string) =>{
+    return string.charAt(0).toUpperCase()+string.slice(1);
+  }
+
   constructor(props) {
     super(props);
 
@@ -13,6 +19,7 @@ class About extends Component {
         borderColor: props.mode === 'dark' ? 'white' : 'rgb(0 0 0 / 85%)'
       }
     };
+    document.title = `${this.capitalizedFirstLetter(this.props.category)} - NewsZap`;
   }
 
   componentDidUpdate(prevProps) {
