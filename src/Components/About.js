@@ -95,7 +95,7 @@ class About extends Component {
             </h2>
             <div id="collapseFour" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div className="accordion-body" style={myStyle}>
-                This App is made by <strong>Neel Bhattacharya</strong>. It is made in React. Made with the helps of youtube video, and react js documantation. Hope you all like it.
+                This App is made by <strong>Neel Bhattacharya</strong>. It is made in React. Made with the helps of youtube video, react js documantation, and the api used is <strong>News Api</strong>. Hope you all like it.
                 🎉🥳
               </div>
             </div>

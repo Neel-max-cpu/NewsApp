@@ -54,3 +54,30 @@
 }
 
 
+.text-body-dark1{
+    color: #babfb9;
+}
+
+.text-body-dark2{
+    color: #2eff00;
+}
+
+  
+
+
+
+
+/* Disable Hover Effects on Mobile */
+@media (hover: none) and (pointer: coarse) {
+    .card-light:hover, .card-dark:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .card-light:hover .card-img-top,
+    .card-dark:hover .card-img-top {
+        transform: none;
+        box-shadow: none;
+    }
+}
+  

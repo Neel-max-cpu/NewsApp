@@ -157,7 +157,10 @@ export class News extends Component {
                   title={(element.title && element.title.length >= 45) ? element.title.slice(0, 45) + "..." : element.title}
                   description={(element.description && element.description.length >= 60) ? element.description.slice(0, 60) + "..." : element.description}
                   imageUrl={element.urlToImage}
-                  url={element.url}/>
+                  url={element.url}
+                  author={element.author}
+                  date={element.publishedAt}
+                  source={element.source.name}/>
             </div>
         })}
         </div>
