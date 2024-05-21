@@ -6,7 +6,7 @@ export class Spinner extends Component {
     return (
         <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
         {/* <div className='text-center'> */}
-            <img src={loading} alt="loading" />
+            <img className='my-3' src={loading} alt="loading" />
         </div>
     )
   }
