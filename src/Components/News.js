@@ -168,7 +168,9 @@ const News =(props)=>{
 
   // componentDidMount() work is done by useeffect
   useEffect(() => {
+    document.title = `${capitalizedFirstLetter(props.category)} - NewsZap`;
     updateNews();
+    // eslint-disable-next-line
   }, []);
 
 
@@ -232,9 +234,10 @@ const News =(props)=>{
       page: this.state.page+1
     })
     */
-    setPage(page+1);
-
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+   
+   // const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+   const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+   setPage(page+1);
     let data = await fetch(url);
     let parsedData = await data.json();
     // console.log(parsedData)

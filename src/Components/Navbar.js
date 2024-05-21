@@ -26,7 +26,7 @@ const Navbar = (props)=>{
     const { mode, toggleMode } = props;
     return (
       <div>
-            <nav className={`navbar navbar-expand-lg ${mode === 'light' ? 'navbar-light' : 'navbar-dark'}`}>
+            <nav className={`navbar fixed-top navbar-expand-lg ${mode === 'light' ? 'navbar-light' : 'navbar-dark'}`}>
             {/* <nav className={`navbar navbar-expand-lg navbar-${mode}`}> */}
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">NewsZap</Link>
