@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+import React from 'react'
 import './NewsItem.css';
 
-export class NewsItem extends Component {
-  render() {
-    let {title, description, imageUrl, url, author, date, source} = this.props
-    const{mode} = this.props;
+// export class NewsItem extends Component {
+const NewsItem =(props)=> {
+  // render() {
+    // let {title, description, imageUrl, url, author, date, source} = this.props;
+    let {title, description, imageUrl, url, author, date, source} = props;
+    // const{mode} = this.props;
+    const{mode} = props;
       // default img to use if image is not preset -----
       const defaultImageUrl = process.env.PUBLIC_URL + '/image/default.jpg';
   
@@ -31,7 +35,7 @@ export class NewsItem extends Component {
         </div>
       </div>
     )
-  }
+  // }
 }
 
 export default NewsItem
