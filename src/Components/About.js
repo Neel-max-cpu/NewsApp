@@ -22,6 +22,18 @@ class About extends Component {
     document.title = `${this.capitalizedFirstLetter(this.props.category)} - NewsZap`;
   }
 
+  componentDidMount() {
+    this.props.setProgress(30);
+    // Simulate loading process
+    setTimeout(() => {
+      this.props.setProgress(50);
+    }, 90);
+    setTimeout(() => {
+      this.props.setProgress(100);
+    }, 150);
+  }
+
+
   componentDidUpdate(prevProps) {
     if (prevProps.mode !== this.props.mode) {
       this.updateStyles(this.props.mode);

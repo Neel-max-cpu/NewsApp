@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.custom-dark2{
+  background-color: #403d3d;
+}
