@@ -47,6 +47,7 @@ export default class App extends Component {
 
 
   pageSize = 6;
+  apiKey = process.env.REACT_APP_NEWS_API;
   state ={
     // initially progress will be zero
     progress : 0 
@@ -71,25 +72,25 @@ export default class App extends Component {
               // onLoaderFinished={() => setProgress(0)}
             />
             <Routes>
-              {/* <News setProgress={this.setProgress}  mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category="sports"/> */}
+              {/* <News setProgress={this.setProgress} apiKey={this.apiKey}  mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category="sports"/> */}
               {/* home/NewsZap  */}
-              <Route exact path="/" element={<News setProgress={this.setProgress}  key="home" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='general'/>}></Route> 
+              <Route exact path="/" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="home" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='general'/>}></Route> 
               {/* about */}
-              <Route exact path="/about" element={<About setProgress={this.setProgress} mode={mode} category='about'/>}></Route>
+              <Route exact path="/about" element={<About setProgress={this.setProgress} apiKey={this.apiKey} mode={mode} category='about'/>}></Route>
               {/* business */}
-              <Route exact path="/business" element={<News setProgress={this.setProgress}  key="business" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='business'/>}></Route>
+              <Route exact path="/business" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="business" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='business'/>}></Route>
               {/* entertainment */}
-              <Route exact path="/entertainment" element={<News setProgress={this.setProgress}  key="entertainment" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='entertainment'/>}></Route>
+              <Route exact path="/entertainment" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="entertainment" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='entertainment'/>}></Route>
               {/* general */}
-              <Route exact path="/general" element={<News setProgress={this.setProgress}  key="general" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='general'/>}></Route>
+              <Route exact path="/general" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="general" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='general'/>}></Route>
               {/* health */}
-              <Route exact path="/health" element={<News setProgress={this.setProgress}  key="health" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='health'/>}></Route>
+              <Route exact path="/health" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="health" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='health'/>}></Route>
               {/* science */}
-              <Route exact path="/science" element={<News setProgress={this.setProgress}  key="science" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='science'/>}></Route>
+              <Route exact path="/science" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="science" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='science'/>}></Route>
               {/* sports */}
-              <Route exact path="/sports" element={<News setProgress={this.setProgress}  key="sports" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='sports'/>}></Route>
+              <Route exact path="/sports" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="sports" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='sports'/>}></Route>
               {/* technology */}
-              <Route exact path="/technology" element={<News setProgress={this.setProgress}  key="technology" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='technology'/>}></Route>
+              <Route exact path="/technology" element={<News setProgress={this.setProgress} apiKey={this.apiKey}  key="technology" mode={mode} toggleMode={this.toggleMode} pageSize = {this.pageSize} country="in" category='technology'/>}></Route>
             </Routes>
 
         </div>
