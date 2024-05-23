@@ -14,6 +14,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## NewsZap
+NewsZap is a modern news application built with React that delivers the latest news across various categories such as business, entertainment, health, science, sports, and technology. It features a dark/light mode toggle, infinite scrolling, and real-time news updates using the NewsAPI. The app is designed for a seamless user experience, whether on desktop or mobile platforms.
+
+### Key Features
+**Real-time News Updates**: Stay updated with the latest news articles.
+**Infinite Scroll**: Load more articles as you scroll down.
+**Dark/Light Mode**: Toggle between dark and light themes for a comfortable reading experience.
+**Category Filtering**: Browse news by categories like business, entertainment, health, and more.
+**Responsive Design**: Optimized for both desktop and mobile devices.
+
+### Technologies Used
+**React**: Frontend library for building user interfaces.
+**React Router**: For handling navigation and routing.
+**NewsAPI**: Source of news articles.
+**React Top Loading Bar**: For showing progress loading bar.
+**Bootstrap**: For styling and layout.
+
+
 ## Getting Started with Create React App
 ## Available Scripts
 
