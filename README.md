@@ -3,6 +3,8 @@
 <!-- ## Live Demo here  -> [Link](https://text-webapp-utils.netlify.app/) ⭐ -->
 ## Live Demo not available since NewsApi doesn't allow to host and works only in local server 😓🥲⭐
 
+## Working of the App Video -> [Link](https://youtu.be/M5skgQxipNE)✨
+
 ### Images of the App 
 ![Image 1](https://github.com/Neel-max-cpu/NewsApp/blob/main/public/image/1.png?raw=true)
 ![Image 2](https://github.com/Neel-max-cpu/NewsApp/blob/main/public/image/2.png?raw=true)
